@@ -12,6 +12,14 @@ class Products extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct()
+     {
+       $opportunity = Product::where('price', '<', 15)->get();
+
+       view()->share(compact('opportunity'));
+     }
+
     public function index()
     {
       $products = Product::all();
@@ -33,7 +41,7 @@ class Products extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
@@ -55,7 +63,9 @@ class Products extends Controller
      */
     public function show(Product $product)
     {
-        return view('layouts.base');
+        $product = Product::find($product)->first();
+
+        return view('products.show', compact('product'));
     }
 
     /**
