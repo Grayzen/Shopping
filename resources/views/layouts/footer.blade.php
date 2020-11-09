@@ -1,6 +1,6 @@
 
 
-    <footer class="footer mt-auto py-3 bg-light fixed-bottom mt-5">
+    <footer class="footer mt-auto py-3 fixed-bottom mt-5" style="background-color: rgba(0, 0, 0, 0.66)">
         <span class="text-muted">Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})</span>
     </footer>
 
