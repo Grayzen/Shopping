@@ -3,9 +3,6 @@
 
 @section('title', 'Base')
 
-@section('style')
-
-@endsection
 
 @section('navbar')
 
@@ -29,21 +26,17 @@
 
 @section('content')
 
-  <div class="row ml-2 mr-2">
-    @foreach ($products as $key => $value)
-      <div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
+  <div class="w-75 ml-2 mr-2 mt-5">
+
         <div class="card mb-4">
-          <img src="https://picsum.photos/id/{{ $value->id }}/300/200" class="" alt="{{ $value->id }}">
+          <img src="https://picsum.photos/id/{{ $product->id }}/300/200">
           <div class="card-body">
-            <h5 class="card-title">{{ $value->name }}</h5>
+            <h5 class="card-title">{{ $product->name }}</h5>
             <p class="card-text">Some quick example text to build</p>
-            ${{ $value->price }}  <br><br>
-            <a class="nav-link btn btn-sm btn-dark mb-1" href="{{ url('products', $value->id)}}">See Product</a>
-            <a class="nav-link btn-sm btn-info" href="{{ url('products', $value->id)}}">Add to Cart</a>
+            <a class="btn btn-sm btn-secondary" href="{{ url('products', $product->id)}}">${{ $product->price }}</a>
           </div>
         </div>
-      </div>
-    @endforeach
+
   </div>
 
 
