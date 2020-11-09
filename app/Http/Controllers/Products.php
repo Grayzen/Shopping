@@ -33,7 +33,7 @@ class Products extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
