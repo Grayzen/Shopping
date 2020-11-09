@@ -14,7 +14,16 @@ class Products extends Controller
      */
     public function index()
     {
-        //
+      $products = Product::all();
+
+      return view('layouts.base', compact('products'));
+    }
+
+    public function types($type)
+    {
+      $products = Product::where('type', $type)->get();
+
+      return view('layouts.base', compact('products'));
     }
 
     /**
@@ -46,7 +55,7 @@ class Products extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('layouts.base');
     }
 
     /**
